@@ -41,10 +41,12 @@ function App() {
     [isFakeDark]
   );
 
-  const archiveOptions = {
-    show: false,
-    title: 'Post archive in addition to main post',
-  };
+  const archiveOptions = useMemo(() => {
+    return {
+      show: false,
+      title: `Post archive in addition ${posts.length}`,
+    };
+  }, [posts.length]);
 
   return (
     <section>
